@@ -1,1 +1,0 @@
-# Trabalho realizado na primeira aula prática
