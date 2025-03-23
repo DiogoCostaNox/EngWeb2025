@@ -1,0 +1,45 @@
+# Terceiro TPC do semestre
+2025-03-01
+## Resumo
+
+# 📌 Sistema de Gestão Académica com Node.js
+
+## 🔹 Visão Geral
+Este sistema utiliza um servidor **Node.js** para gerar páginas web interativas, baseando-se em dados extraídos de um ficheiro **JSON**. A aplicação possibilita a consulta, edição e remoção de registos académicos de estudantes.
+
+## ✨ Funcionalidades
+- **📋 Listar Todos os Alunos** – Exibição de uma tabela com a lista completa dos alunos e suas informações básicas.
+- **🔍 Ver Detalhes do Aluno** – Permite visualizar dados detalhados de um estudante específico.
+- **➕ Adicionar Novos Alunos** – Registo de novos estudantes com as suas informações e status dos TPCs.
+- **✏️ Editar Registos de Alunos** – Modificação de dados já existentes.
+- **🗑️ Eliminar Alunos** – Exclusão de registos de estudantes do sistema.
+
+## 📂 Estrutura do Projeto
+O projeto está organizado da seguinte forma:
+
+- **`alunos_server_skeleton.js`** – Servidor HTTP responsável pelo processamento de requisições e respostas.
+- **`templates.js`** – Conjunto de funções para geração dinâmica do HTML das páginas.
+- **`static/`** – Diretório contendo ficheiros estáticos, como **CSS** e imagens.
+- **`alunos.json`** – Base de dados em formato **JSON** com as informações dos estudantes.
+
+## 🚀 Como Executar
+### 1️⃣ Instalar as Dependências
+```bash
+npm install
+```
+
+### 2️⃣ Iniciar a API de Dados
+```bash
+json-server --watch alunos.json
+```
+
+### 3️⃣ Iniciar o Servidor
+```bash
+node alunos_server_skeleton.js
+```
+
+### 4️⃣ Aceder à Aplicação
+Abra o navegador e aceda ao endereço:
+```
+http://localhost:3040
+```
