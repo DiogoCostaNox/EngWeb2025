@@ -1,0 +1,40 @@
+extends layout 
+
+block head 
+  style.
+    .truncate {
+      max-width: 200px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+block content 
+  .w3-card-4.w3-margin-bottom
+    header.w3-container.w3-teal
+      h1 Lista de Entradas
+
+  .w3-container
+    table.w3-table-all.w3-hoverable.w3-margin-top
+      thead
+        tr.w3-light-grey
+          th Título    
+          th Descrição
+          th Visibilidade
+          th Data de Criação
+          th Delete
+      tbody
+        each item in diaryEntries
+          tr
+            td.truncate
+              a(href=`/diary/${item._id}`, class="w3-text-blue w3-hover-text-indigo")= item.title
+            td.truncate= item.description
+            td= item.isPublic ? 'Público' : 'Privado'
+            td.truncate= new Date(item.creationDate).toISOString().slice(0, 19).replace('T', ', ')
+            td
+                form(method="POST", action=`/diary/${item._id}/delete`, onsubmit="return confirm('Tens a certeza que queres eliminar este item?');")
+                    button(type="submit", class="w3-button w3-red w3-small w3-round") Delete
+
+    // Botão para criar nova entrada
+    div.w3-margin-top
+      a(href="/diary/create", class="w3-button w3-blue w3-round") Nova Entrada
